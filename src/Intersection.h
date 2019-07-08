@@ -20,7 +20,7 @@ public:
 
     // typical behaviour methods
     void pushBack(std::shared_ptr<Vehicle> vehicle, std::promise<void> &&promise);
-    void permitEntryToFirstQueue();
+    void permitEntryToFirstInQueue();
 
 private:
     std::vector<std::shared_ptr<Vehicle>> _vehicles; // list of all vehicles waiting to enter this intersection

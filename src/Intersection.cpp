@@ -21,11 +21,11 @@ void WaitingVehicles::pushBack(std::shared_ptr<Vehicle> vehicle, std::promise<vo
     _promises.push_back(promise);
 }
 
-void WaitingVehicles::permitEntryToFirstQueue()
+void WaitingVehicles::permitEntryToFirstInQueue()
 {
     auto first_vehicle = _vehicles.front();
     auto first_promise = _vehicles.front();
-    
+
 }
 
 
