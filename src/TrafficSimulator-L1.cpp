@@ -14,7 +14,13 @@ void createTrafficObjects_Paris(std::vector<std::shared_ptr<Street>> &streets, s
 {
     // assign filename of corresponding city map
     filename = "../data/paris.jpg";
-    
+
+    // init traffic objects
+    int nIntersections = 9;
+    for (size_t ni = 0; ni < nIntersections; ni++)
+    {
+        intersections.push_back(std::make_shared<Intersection>());
+    }
 }
 
 // NYC
