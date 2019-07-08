@@ -78,3 +78,9 @@ void Intersection::vehicleHasLeft(std::shared_ptr<Vehicle> vehicle)
     // unblock queue processing
     this->setIsBlocked(false);
 }
+
+void Intersection::setIsBlocked(bool isBlocked)
+{
+    _isBlocked = isBlocked;
+    //std::cout << "Intersection #" << _id << " isBlocked=" << isBlocked << std::endl;
+}
