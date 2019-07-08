@@ -1,7 +1,6 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include <algorithm>
 
 #include "Vehicle.h"
 #include "Street.h"
@@ -15,7 +14,7 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
     filename = "../data/nyc.jpg";
 
     // init traffic objects
-    int nIntersections = 6;
+    int nIntersections = 9;
     for (size_t ni = 0; ni < nIntersections; ni++)
     {
         intersections.push_back(std::make_shared<Intersection>());
