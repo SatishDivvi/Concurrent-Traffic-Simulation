@@ -25,6 +25,7 @@ void WaitingVehicles::permitEntryToFirstInQueue()
 {
     auto first_vehicle = _vehicles.begin();
     auto first_promise = _promises.begin();
+    first_promise
 
 }
 
@@ -62,10 +63,18 @@ void Intersection::addVehicletoQueue(std::shared_ptr<Vehicle> vehicle)
     std::cout << "Intersection #" << _id << "::addVehicleToQueue: thread id = " << std::this_thread::get_id() << std::endl;
     // L2.2 : First, add the new vehicle to the waiting line by creating a promise, a corresponding future and then adding both to _waitingVehicles. 
     // Then, wait until the vehicle has been granted entry. 
-    
+
     std::promise<void> new_vehicle;
     std::future<void> ftr = new_vehicle.get_future();
     _waitingVehicles.pushBack(vehicle, std::move(new_vehicle));
     ftr.wait();
     std::cout << "Intersection #" << _id << ": Vehicle #" << vehicle->getID() << " is granted entry." << std::endl;
+}
+
+void Intersection::vehicleHasLeft(std::shared_ptr<Vehicle> vehicle)
+{
+    //std::cout << "Intersection #" << _id << ": Vehicle #" << vehicle->getID() << " has left." << std::endl;
+
+    // unblock queue processing
+    this->setIsBlocked(false);
 }
