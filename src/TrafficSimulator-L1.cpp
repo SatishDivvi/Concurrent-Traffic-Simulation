@@ -21,6 +21,17 @@ void createTrafficObjects_Paris(std::vector<std::shared_ptr<Street>> &streets, s
     {
         intersections.push_back(std::make_shared<Intersection>());
     }
+
+    // position intersections in pixel coordinates (counter-clockwise)
+    intersections.at(0)->setPosition(385, 270);
+    intersections.at(1)->setPosition(1240, 80);
+    intersections.at(2)->setPosition(1625, 75);
+    intersections.at(3)->setPosition(2110, 75);
+    intersections.at(4)->setPosition(2840, 175);
+    intersections.at(5)->setPosition(3070, 680);
+    intersections.at(6)->setPosition(2800, 1400);
+    intersections.at(7)->setPosition(400, 1100);
+    intersections.at(8)->setPosition(1700, 900); // central plaza
 }
 
 // NYC
