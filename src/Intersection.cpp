@@ -8,6 +8,13 @@
 #include "Intersection.h"
 #include "Vehicle.h"
 
+/* Implementation of class "WaitingVehicles" */
+
+int WaitingVehicles::getSize()
+{
+    return _vehicles.size();
+}
+
 
 Intersection::Intersection()
 {
