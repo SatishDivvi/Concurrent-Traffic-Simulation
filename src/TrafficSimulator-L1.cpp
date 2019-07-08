@@ -35,28 +35,30 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
     for (size_t ns = 0; ns < nStreets; ns++)
     {
         streets.push_back(std::make_shared<Street>());
+        streets.at(ns)->setInIntersection(intersections.at(ns));
+        streets.at(ns)->setOutIntersection(intersections.at(8));
     }
 
-    streets.at(0)->setInIntersection(intersections.at(0));
-    streets.at(0)->setOutIntersection(intersections.at(1));
+    // streets.at(0)->setInIntersection(intersections.at(0));
+    // streets.at(0)->setOutIntersection(intersections.at(1));
 
-    streets.at(1)->setInIntersection(intersections.at(1));
-    streets.at(1)->setOutIntersection(intersections.at(2));
+    // streets.at(1)->setInIntersection(intersections.at(1));
+    // streets.at(1)->setOutIntersection(intersections.at(2));
 
-    streets.at(2)->setInIntersection(intersections.at(2));
-    streets.at(2)->setOutIntersection(intersections.at(3));
+    // streets.at(2)->setInIntersection(intersections.at(2));
+    // streets.at(2)->setOutIntersection(intersections.at(3));
 
-    streets.at(3)->setInIntersection(intersections.at(3));
-    streets.at(3)->setOutIntersection(intersections.at(4));
+    // streets.at(3)->setInIntersection(intersections.at(3));
+    // streets.at(3)->setOutIntersection(intersections.at(4));
 
-    streets.at(4)->setInIntersection(intersections.at(4));
-    streets.at(4)->setOutIntersection(intersections.at(5));
+    // streets.at(4)->setInIntersection(intersections.at(4));
+    // streets.at(4)->setOutIntersection(intersections.at(5));
 
-    streets.at(5)->setInIntersection(intersections.at(5));
-    streets.at(5)->setOutIntersection(intersections.at(0));
+    // streets.at(5)->setInIntersection(intersections.at(5));
+    // streets.at(5)->setOutIntersection(intersections.at(0));
 
-    streets.at(6)->setInIntersection(intersections.at(0));
-    streets.at(6)->setOutIntersection(intersections.at(3));
+    // streets.at(6)->setInIntersection(intersections.at(0));
+    // streets.at(6)->setOutIntersection(intersections.at(3));
 
     // add vehicles to streets
     for (size_t nv = 0; nv < nVehicles; nv++)
