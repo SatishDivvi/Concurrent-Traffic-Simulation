@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <algorithm>
 
 #include "Vehicle.h"
 #include "Street.h"
