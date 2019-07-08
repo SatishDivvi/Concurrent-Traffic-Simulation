@@ -28,10 +28,12 @@ void WaitingVehicles::permitEntryToFirstInQueue()
 
 }
 
+/* Implementation of class "Intersection" */
 
 Intersection::Intersection()
 {
     _type = ObjectType::objectIntersection;
+    _isBlocked = false;
 }
 
 void Intersection::addStreet(std::shared_ptr<Street> street)
