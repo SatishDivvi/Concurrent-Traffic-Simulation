@@ -32,6 +32,15 @@ void createTrafficObjects_Paris(std::vector<std::shared_ptr<Street>> &streets, s
     intersections.at(6)->setPosition(2800, 1400);
     intersections.at(7)->setPosition(400, 1100);
     intersections.at(8)->setPosition(1700, 900); // central plaza
+
+    // create streets and connect traffic objects
+    int nStreets = 8;
+    for (size_t ns = 0; ns < nStreets; ns++)
+    {
+        streets.push_back(std::make_shared<Street>());
+        streets.at(ns)->setInIntersection(intersections.at(ns));
+        streets.at(ns)->setOutIntersection(intersections.at(8));
+    }
 }
 
 // NYC
