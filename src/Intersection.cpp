@@ -91,3 +91,26 @@ void Intersection::simulate() // using threads + promises/futures + exceptions
     // launch vehicle queue processing in a thread
     threads.emplace_back(std::thread(&Intersection::processVehicleQueue, this));
 }
+
+void Intersection::processVehicleQueue()
+{
+    // print id of the current thread
+    //std::cout << "Intersection #" << _id << "::processVehicleQueue: thread id = " << std::this_thread::get_id() << std::endl;
+
+    // continuously process the vehicle queue
+    while (true)
+    {
+        // sleep at every iteration to reduce CPU usage
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+        // only proceed when at least one vehicle is waiting in the queue
+        if (_waitingVehicles.getSize() > 0 && !_isBlocked)
+        {
+            // set intersection to "blocked" to prevent other vehicles from entering
+            this->setIsBlocked(true);
+
+            // permit entry to first vehicle in the queue (FIFO)
+            _waitingVehicles.permitEntryToFirstInQueue();
+        }
+    }
+}
