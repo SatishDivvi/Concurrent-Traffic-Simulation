@@ -84,3 +84,10 @@ void Intersection::setIsBlocked(bool isBlocked)
     _isBlocked = isBlocked;
     //std::cout << "Intersection #" << _id << " isBlocked=" << isBlocked << std::endl;
 }
+
+// virtual function which is executed in a thread
+void Intersection::simulate() // using threads + promises/futures + exceptions
+{
+    // launch vehicle queue processing in a thread
+    threads.emplace_back(std::thread(&Intersection::processVehicleQueue, this));
+}
