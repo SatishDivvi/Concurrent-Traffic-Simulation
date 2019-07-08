@@ -15,6 +15,12 @@ int WaitingVehicles::getSize()
     return _vehicles.size();
 }
 
+void WaitingVehicles::pushBack(std::shared_ptr<Vehicle> vehicle, std::promise<void> &&promise)
+{
+    _vehicles.push_back(vehicle);
+    _promises.push_back(promise);
+}
+
 
 Intersection::Intersection()
 {
