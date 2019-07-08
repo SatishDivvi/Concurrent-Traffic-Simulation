@@ -38,12 +38,18 @@ public:
     // getters / setters
 
     // typical behaviour methods
+    void addVehicletoQueue(std::shared_ptr<Vehicle> vehicle);
     void addStreet(std::shared_ptr<Street> street);
     std::vector<std::shared_ptr<Street>> queryStreets(std::shared_ptr<Street> incoming); // return pointer to current list of all outgoing streets
+    void simulate();
+    void vehicleHasLeft(std::shared_ptr<Vehicle> vehicle);
+    bool trafficLightIsGreen();
 
 private:
 
     // typical behaviour methods
+    void processVehicleQueue();
+
     std::vector<std::shared_ptr<Street>> _streets;   // list of all streets connected to this intersection
 };
 
