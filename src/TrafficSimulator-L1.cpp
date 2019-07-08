@@ -21,13 +21,15 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
     }
 
     // position intersections in pixel coordinates
-    intersections.at(0)->setPosition(1430, 625);
-    intersections.at(1)->setPosition(2575, 1260);
-    intersections.at(2)->setPosition(2200, 1950);
-    intersections.at(3)->setPosition(1000, 1350);
-    intersections.at(4)->setPosition(400, 1000);
-    intersections.at(5)->setPosition(750, 250);
-
+    intersections.at(0)->setPosition(385, 270);
+    intersections.at(1)->setPosition(1240, 80);
+    intersections.at(2)->setPosition(1625, 75);
+    intersections.at(3)->setPosition(2110, 75);
+    intersections.at(4)->setPosition(2840, 175);
+    intersections.at(5)->setPosition(3070, 680);
+    intersections.at(6)->setPosition(2800, 1400);
+    intersections.at(7)->setPosition(400, 1100);
+    intersections.at(8)->setPosition(1700, 900);
     // create streets and connect traffic objects
     int nStreets = 7;
     for (size_t ns = 0; ns < nStreets; ns++)
