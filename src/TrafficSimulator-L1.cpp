@@ -124,7 +124,13 @@ int main()
     createTrafficObjects_Paris(streets, intersections, vehicles, backgroundImg, nVehicles);
 
     /* PART 2 : simulate traffic objects */
+    
+    // simulate intersections
+    std::for_each(intersections.begin(), intersections.end(), [](std::shared_ptr<Intersection> &i) {
+        i->simulate();
+    });
 
+    
     // simulate vehicles
     std::for_each(vehicles.begin(), vehicles.end(), [](std::shared_ptr<Vehicle> &v) {
         v->simulate();
