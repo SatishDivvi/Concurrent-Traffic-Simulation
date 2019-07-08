@@ -31,7 +31,7 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
     intersections.at(7)->setPosition(400, 1100);
     intersections.at(8)->setPosition(1700, 900);
     // create streets and connect traffic objects
-    int nStreets = 7;
+    int nStreets = 8;
     for (size_t ns = 0; ns < nStreets; ns++)
     {
         streets.push_back(std::make_shared<Street>());
