@@ -75,6 +75,9 @@ void Vehicle::drive()
             // check wether halting position in front of destination has been reached
             if (completion >= 0.9 && !hasEnteredIntersection)
             {
+                // Task L2.1 : Start up a task using std::async which takes a reference to the method Intersection::addVehicleToQueue
+                auto ftr = std::async(&Intersection::addVehicleToQueue, _currDestination, get_shared_this());
+                ftr.get();
                 // slow down and set intersection flag
                 _speed /= 10.0;
                 hasEnteredIntersection = true;
