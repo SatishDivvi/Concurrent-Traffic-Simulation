@@ -41,6 +41,14 @@ void createTrafficObjects_Paris(std::vector<std::shared_ptr<Street>> &streets, s
         streets.at(ns)->setInIntersection(intersections.at(ns));
         streets.at(ns)->setOutIntersection(intersections.at(8));
     }
+
+    // add vehicles to streets
+    for (size_t nv = 0; nv < nVehicles; nv++)
+    {
+        vehicles.push_back(std::make_shared<Vehicle>());
+        vehicles.at(nv)->setCurrentStreet(streets.at(nv));
+        vehicles.at(nv)->setCurrentDestination(intersections.at(8));
+    }
 }
 
 // NYC
