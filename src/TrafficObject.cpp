@@ -1,5 +1,7 @@
 #include <iostream>
 #include <chrono>
+#include <algorithm>
+#include <mutex>
 #include "TrafficObject.h"
 
 using namespace std;
