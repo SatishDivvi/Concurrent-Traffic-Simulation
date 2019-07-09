@@ -11,19 +11,25 @@
 
 /* Implementation of class "WaitingVehicles" */
 
+// L3.1 : Safeguard all accesses to the private members _vehicles and _promises with an appropriate locking mechanism, 
+// that will not cause a deadlock situation where access to the resources is accidentally blocked.
+
 int WaitingVehicles::getSize()
 {
+    std::lock_gaurd<std::mutex> lock(_mutex);
     return _vehicles.size();
 }
 
 void WaitingVehicles::pushBack(std::shared_ptr<Vehicle> vehicle, std::promise<void> &&promise)
 {
+    std::lock_gaurd<std::mutex> lock(_mutex);
     _vehicles.push_back(vehicle);
     _promises.push_back(std::move(promise));
 }
 
 void WaitingVehicles::permitEntryToFirstInQueue()
 {
+    std::lock_gaurd<std::mutex> lock(_mutex);
     // L2.3 : First, get the entries from the front of _promises and _vehicles. 
     // Then, fulfill promise and send signal back that permission to enter has been granted.
     // Finally, remove the front elements from both queues. 
