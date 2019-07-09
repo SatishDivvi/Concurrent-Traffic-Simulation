@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <mutex>
+#include <thread>
 #include "TrafficLight.h"
 
 /* Implementation of class "MessageQueue" */
