@@ -27,7 +27,7 @@ public:
     void send(TrafficLightPhase &&message);
     TrafficLightPhase receive() { return TrafficLightPhase };
 private:
-    
+    std::deque<TrafficLightPhase> _queue;
 };
 
 // FP.1 : Define a class „TrafficLight“ which is a child class of TrafficObject. 
