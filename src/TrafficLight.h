@@ -27,7 +27,7 @@ public:
     void send(T &&message);
     T receive() { return T };
 private:
-    std::deque<TrafficLightPhase> _queue;
+    std::deque<T> _queue;
     std::condition_variable _cond;
     std::mutex _mutex;
 };
