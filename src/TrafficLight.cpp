@@ -32,10 +32,9 @@ void MessageQueue<T>::send(T &&message)
     _condition.notify_one();
 }
 
-
 /* Implementation of class "TrafficLight" */
 
-/* 
+
 TrafficLight::TrafficLight()
 {
     _currentPhase = TrafficLightPhase::red;
@@ -48,7 +47,6 @@ void TrafficLight::waitForGreen()
     // Once it receives TrafficLightPhase::green, the method returns.
 }
 
-*/
 
 TrafficLightPhase TrafficLight::getCurrentPhase()
 {
