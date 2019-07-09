@@ -71,6 +71,7 @@ void TrafficLight::cycleThroughPhases()
             } else {
                 _currentPhase = TrafficLightPhase::red;
             }
+            auto ftr = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, queue, std::move(_currentPhase));
         }
     }
 }
