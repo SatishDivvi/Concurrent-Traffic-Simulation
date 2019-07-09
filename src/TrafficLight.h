@@ -24,7 +24,8 @@ template <class T>
 class MessageQueue
 {
 public:
-
+    void send(TrafficLightPhase &&message);
+    TrafficLightPhase receive() { return TrafficLightPhase };
 private:
     
 };
