@@ -28,7 +28,7 @@ public:
     T receive() { return T };
 private:
     std::deque<T> _queue;
-    std::condition_variable _cond;
+    std::condition_variable _condition;
     std::mutex _mutex;
 };
 
