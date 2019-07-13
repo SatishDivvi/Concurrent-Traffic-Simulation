@@ -86,7 +86,11 @@ void TrafficLight::cycleThroughPhases()
             } else {
                 _currentPhase = TrafficLightPhase::red;
             }
-            future = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, messages, std::move(_currentPhase));
+            futures.emplace_back(std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, messages, std::move(_currentPhase)));
         }
+        lastUpdate = std::chrono::system_clock::now();
     }
+    std::for_each(futures.begin(), futures.end(), [](std::future<void> &ftr) {
+    	ftr.wait();
+    });
 }
