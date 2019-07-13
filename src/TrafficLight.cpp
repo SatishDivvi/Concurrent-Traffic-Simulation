@@ -15,8 +15,7 @@ T MessageQueue<T>::receive()
     // to wait for and receive new messages and pull them from the queue using move semantics. 
     // The received object should then be returned by the receive function. 
     std::unique_lock<std::mutex> lock(_mutex);
-    _condition.wait(lock, [this] { retun !_queue.empty() });
-
+    _condition.wait(lock, [this] { return !_queue.empty(); });
     T message = std::move(_queue.back());
     _queue.pop_back();
     return message;
@@ -45,6 +44,12 @@ void TrafficLight::waitForGreen()
     // FP.5b : add the implementation of the method waitForGreen, in which an infinite while-loop 
     // runs and repeatedly calls the receive function on the message queue. 
     // Once it receives TrafficLightPhase::green, the method returns.
+    while(true) {
+        TrafficLightPhase signal = messages.receive();
+        if(signal == TrafficLightPhase::green) {
+            return signal;
+        }
+    }
 }
 
 
@@ -69,6 +74,7 @@ void TrafficLight::cycleThroughPhases()
     double cycleDuration = std::rand() % 6 + 4;
     std::chrono::time_point<std::chrono::system_clock> lastUpdate;
     lastUpdate = std::chrono::system_clock::now();
+    std::future<void> future;
     while(true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
@@ -79,7 +85,7 @@ void TrafficLight::cycleThroughPhases()
             } else {
                 _currentPhase = TrafficLightPhase::red;
             }
-            auto ftr = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, messages, std::move(_currentPhase));
+            future = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, messages, std::move(_currentPhase));
         }
     }
 }
