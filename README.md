@@ -6,6 +6,11 @@ A multithreaded traffic simulator using a real urban map. Run each vehicle on a 
 
 ### Installation:
 
+1. Clone the repository using command `git clone https://github.com/SatishDivvi/Concurrent-Traffic-Simulation.git`.
+2. Create a **build** folder and then cd into the folder using `mkdir build && cd build`.
+3. Run command `cmake .. && make`.
+
+**Note:** _For **Step-3** to successfully execute make sure you are in **GPU Mode**._ 
 
 ### Project Execution:
 
