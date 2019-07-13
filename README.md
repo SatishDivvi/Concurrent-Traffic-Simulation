@@ -14,6 +14,8 @@ A multithreaded traffic simulator using a real urban map. Run each vehicle on a 
 
 ### Project Execution:
 
+1. Execute command `./traffic_simulation`.
+2. Traffic Simulator should now be running.
 
 ### Video Walkthrough:
 
