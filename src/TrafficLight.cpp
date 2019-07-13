@@ -46,7 +46,7 @@ void TrafficLight::waitForGreen()
     // runs and repeatedly calls the receive function on the message queue. 
     // Once it receives TrafficLightPhase::green, the method returns.
     while(true) {
-        TrafficLightPhase signal = messages.receive();
+        TrafficLightPhase signal = messages->receive();
         if(signal == TrafficLightPhase::green) {
             return signal;
         }
