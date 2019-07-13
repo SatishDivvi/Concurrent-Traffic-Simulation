@@ -19,6 +19,8 @@ A multithreaded traffic simulator using a real urban map. Run each vehicle on a 
 
 ### Video Walkthrough:
 
+<img src="https://i.imgur.com/SRsNf9G.gif" title="Concurrent Traffic Simulator" width="80%" alt="Concurrent Traffic Simulation C++" />
+
 ### Author
 
 Divvi Naga Venkata Satish - [Portfolio](https://satishdivvi.github.io)
