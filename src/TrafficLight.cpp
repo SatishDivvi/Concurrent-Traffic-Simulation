@@ -74,10 +74,10 @@ void TrafficLight::cycleThroughPhases()
     // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
     std::chrono::time_point<std::chrono::system_clock> lastUpdate;
     std::vector<std::future<void>> futures;
+    srand(time(NULL));
     lastUpdate = std::chrono::system_clock::now();
     while(true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        srand(time(NULL));
         double cycleDuration = (std::rand() / double(RAND_MAX)) * (6 - 4) + 4;
         long time_duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - lastUpdate).count();
         if(time_duration >= cycleDuration) {
