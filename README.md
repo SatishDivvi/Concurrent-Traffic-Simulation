@@ -19,7 +19,7 @@ A multithreaded traffic simulator using a real urban map. Run each vehicle on a 
 
 ### Video Walkthrough:
 
-<img src="https://i.imgur.com/SRsNf9G.gif" title="Concurrent Traffic Simulator" width="80%" alt="Concurrent Traffic Simulation C++" />
+<img src="https://i.imgur.com/SRsNf9G.gif" title="Concurrent Traffic Simulator - Paris" width="80%" alt="Concurrent Traffic Simulation Paris Map C++" />
 
 <img src="https://i.imgur.com/ud80EKO.gif" title="Concurrent Traffic Simulator - New York" width="80%" alt="Concurrent Traffic Simulation New York Map C++" />
 
